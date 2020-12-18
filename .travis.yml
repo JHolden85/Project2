@@ -5,6 +5,5 @@ branches:
   only:
     - master
     - main
-    - test
 script:
   - npm run lint
