@@ -1,3 +1,3 @@
 # Project2
 
-This is a test pull from Amikhail. 
+This is a test 
