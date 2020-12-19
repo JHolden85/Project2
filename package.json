@@ -19,10 +19,6 @@
   },
   "homepage": "https://github.com/JHolden85/Project2#readme",
   "dependencies": {
-<<<<<<< HEAD:package.json
-    "eslint": "^7.15.0",
-    "express": "^4.17.1"
-=======
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
@@ -36,6 +32,5 @@
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
     "prettier": "^2.2.1"
->>>>>>> 783067d3d261f2853fead65748ef75769c9fcc6c:Main/package.json
   }
 }

@@ -1,10 +1,14 @@
 {
-  "env": {
-      "browser": true,
-      "commonjs": true,
-      "node": true
-  },
-  "rules": {
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "node": true,
+        "es6": true
+    },
+    "parserOptions":{
+          "ecmaVersion": 2017
+    },
+    "rules": {
       "no-duplicate-case":"error",
       "no-empty":"error",
       "no-extra-semi":"error",
@@ -37,5 +41,5 @@
           "error",
           "always"
       ]
-  }
+  },
 }
