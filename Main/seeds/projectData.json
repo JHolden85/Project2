@@ -1,17 +1,26 @@
-[
-  {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
-  },
-  {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
-  },
-  {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
-  }
+[{
+        "name": "Music Trivia",
+        "description": "Our list of music trivia categories show you all the options for music rounds to add to trivia night.",
+        "needed_funding": 5000
+    },
+    {
+        "name": "Movie Trivia",
+        "description": "General movie trivia is one of the most popular trivia categories to have at trivia nights. Everyone watches movies of some sort. ",
+        "needed_funding": 10000
+    },
+    {
+        "name": "TV Trivia",
+        "description": "TV trivia is one of the favorite categories at trivia nights. .",
+        "needed_funding": 800
+    },
+    {
+        "name": "News & Celebrity Trivia",
+        "description": "General News & celebrity trivia is one of the most popular trivia categories to have at trivia nights. Everyone pays attention to celebrities and news of some sort. ",
+        "needed_funding": 800
+    },
+    {
+        "name": "All Trivia Categories",
+        "description": "Browse all the unique and fun trivia categories we offer below so you can plan an entertaining and successful trivia night",
+        "needed_funding": 800
+    }
 ]
