@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Categories extends Model {}
+class TriviaCategories extends Model {}
 
 Categories.init({
     id: {
@@ -19,7 +19,7 @@ Categories.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Categories',
+    modelName: 'TriviaCategories',
 });
 
-module.exports = Categories;
+module.exports = TriviaCategories;
