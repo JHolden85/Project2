@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class AnswerQuestion extends Model {}
 
-Answer.init({
+AnswerQuestion.init({
     category: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -26,8 +26,6 @@ Answer.init({
     },
     incorrect_answers: {
         type: DataTypes.STRING,
-        allowNull: false,
-        fields: [3],
     },
 }, {
     sequelize,
