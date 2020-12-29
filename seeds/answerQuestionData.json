@@ -1,0 +1,247 @@
+[{
+        "category": "Entertainment: Video Games",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "In which series of games do you collect souls to empower you and buy weaponry and armor with?",
+        "correct_answer": "Souls ",
+        "incorrect_answers": [
+            "Final Fantasy ",
+            "Monster Hunter",
+            "The Legend of Zelda"
+        ]
+    },
+    {
+        "category": "Geography",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "What is the largest city and commercial capital of Sri Lanka?",
+        "correct_answer": "Colombo",
+        "incorrect_answers": [
+            "Moratuwa",
+            "Negombo",
+            "Kandy"
+        ]
+    },
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Velma Kelly and Roxie Hart are the protagonists of which Oscar winning movie?",
+        "correct_answer": "Chicago",
+        "incorrect_answers": [
+            "Dreamgirls",
+            "Cabaret",
+            "All That Jazz"
+        ]
+    },
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Which animated movie was first to feature a celebrity as a voice actor?",
+        "correct_answer": "Aladdin",
+        "incorrect_answers": [
+            "Toy Story",
+            "James and the Giant Peach",
+            "The Hunchback of Notre Dame"
+        ]
+    },
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "When was the movie &#039;Con Air&#039; released?",
+        "correct_answer": "1997",
+        "incorrect_answers": [
+            "1985",
+            "1999",
+            "1990"
+        ]
+    },
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Who played the female lead in the 1933 film &quot;King Kong&quot;?",
+        "correct_answer": "Fay Wray",
+        "incorrect_answers": [
+            "Jean Harlow",
+            "Vivien Leigh",
+            "Mae West"
+        ]
+    },
+    {
+        "category": "Entertainment: Music",
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "The music group Daft Punk got their name from a negative review they recieved.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+            "False"
+        ]
+    },
+    {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Who had a US and UK number 1 hit in 1962 with the instrumental, &#039;Telstar&#039;?",
+        "correct_answer": "The Tornados",
+        "incorrect_answers": [
+            "The Ventures",
+            "The Spotnicks",
+            "The Tremeloes"
+        ]
+    },
+    {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "According to their 1974 hit, what were Brownsville Station doing &quot;In The Boys&#039; Room&quot;?",
+        "correct_answer": "Smokin&#039;",
+        "incorrect_answers": [
+            "Hangin&#039;",
+            "Lovin&#039;",
+            "Peein&#039;"
+        ]
+    },
+    {
+        "category": "Entertainment: Television",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "In the TV show &quot;Cheers&quot;, Sam Malone was a former relief pitcher for which baseball team?",
+        "correct_answer": "Boston Red Sox",
+        "incorrect_answers": [
+            "New York Mets",
+            "Baltimore Orioles",
+            "Milwaukee Brewers"
+        ]
+    },
+    {
+        "category": "Entertainment: Television",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "The theme for the popular science fiction series &quot;Doctor Who&quot; was composed by who?",
+        "correct_answer": "Ron Grainer",
+        "incorrect_answers": [
+            "Murray Gold",
+            "Delia Derbyshire",
+            "Peter Howell"
+        ]
+    },
+    {
+        "category": "Entertainment: Television",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Which of these Bojack Horseman characters is a human?",
+        "correct_answer": "Todd Chavez",
+        "incorrect_answers": [
+            "Lennie Turtletaub",
+            "Princess Carolyn",
+            "Tom Jumbo-Grumbo"
+        ]
+    },
+    {
+        "category": "Sports",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "At which bridge does the annual Oxford and Cambridge boat race start?",
+        "correct_answer": "Putney",
+        "incorrect_answers": [
+            "Hammersmith",
+            "Vauxhall ",
+            "Battersea"
+        ]
+    },
+    {
+        "category": "Sports",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Which English football club has the nickname &#039;The Foxes&#039;?",
+        "correct_answer": "Leicester City",
+        "incorrect_answers": [
+            "Northampton Town",
+            "Bradford City",
+            "West Bromwich Albion"
+        ]
+    },
+    {
+        "category": "Sports",
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "Manchester United won the 2013-14 English Premier League.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+            "True"
+        ]
+    },
+    {
+        "category": "History",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "In what year did Neil Armstrong and Buzz Aldrin land on the moon?",
+        "correct_answer": "1969",
+        "incorrect_answers": [
+            "1965",
+            "1966",
+            "1973"
+        ]
+    },
+    {
+        "category": "History",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "How many manned moon landings have there been?",
+        "correct_answer": "6",
+        "incorrect_answers": [
+            "1",
+            "3",
+            "7"
+        ]
+    },
+    {
+        "category": "History",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which of his six wives was Henry VIII married to the longest?",
+        "correct_answer": "Catherine of Aragon",
+        "incorrect_answers": [
+            "Anne Boleyn",
+            "Jane Seymour",
+            "Catherine Parr"
+        ]
+    },
+    {
+        "category": "Celebrities",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Named after a character he played in a 1969 film, what is the name of the ski resort in Utah that Robert Redford bought in 1968?",
+        "correct_answer": "Sundance",
+        "incorrect_answers": [
+            "Woodward",
+            "Turner",
+            "Booker"
+        ]
+    },
+    {
+        "category": "Celebrities",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What is the name of Jontron&#039;s parrot?",
+        "correct_answer": "Jacques",
+        "incorrect_answers": [
+            "Jak",
+            "John",
+            "Jaques"
+        ]
+    },
+    {
+        "category": "Celebrities",
+        "type": "boolean",
+        "difficulty": "medium",
+        "question": "Michael Jackson had a pet python named &lsquo;Crusher&rsquo;.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+            "False"
+        ]
+    }
+]
