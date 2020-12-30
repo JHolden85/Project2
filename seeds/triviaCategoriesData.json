@@ -1,0 +1,29 @@
+[{
+        "id": 9,
+        "name": "General Knowledge"
+    },
+    {
+        "id": 11,
+        "name": "Entertainment: Film"
+    },
+    {
+        "id": 12,
+        "name": "Entertainment: Music"
+    },
+    {
+        "id": 14,
+        "name": "Entertainment: Television"
+    },
+    {
+        "id": 21,
+        "name": "Sports"
+    },
+    {
+        "id": 23,
+        "name": "History"
+    },
+    {
+        "id": 26,
+        "name": "Celebrities"
+    }
+]
