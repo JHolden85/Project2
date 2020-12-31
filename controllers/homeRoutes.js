@@ -17,15 +17,27 @@ router.get('/play', (req, res) => {
     }
 });
 
+router.get('/quizMaker', (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            res.render('highscore');
+            return;
+        } else {
+            res.redirect('login');
+        }
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('/highscore', (req, res) => {
     try {
-        // if (req.session.logged_in) {
-        //     res.render('highscore');
-        //     return;
-        // } else {
-        //     res.redirect('login');
-        // }
-        res.render('highscore');
+        if (req.session.logged_in) {
+            res.render('highscore');
+            return;
+        } else {
+            res.redirect('login');
+        }
     } catch (err) {
         res.status(500).json(err);
     }
