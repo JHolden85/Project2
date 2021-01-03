@@ -9,14 +9,51 @@ router.get('/', (req, res) => {
     }
 });
 
-router.get('/play', (req, res) => {
+// Quiz Category Routes
+router.get('/music', (req, res) => {
     try {
-        res.render('quiz');
+        res.render('music');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/movies', (req, res) => {
+    try {
+        res.render('movies');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/television', (req, res) => {
+    try {
+        res.render('television');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/sports', (req, res) => {
+    try {
+        res.render('sports');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/history', (req, res) => {
+    try {
+        res.render('history');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/celebrities', (req, res) => {
+    try {
+        res.render('celebrities');
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
+// Custom quiz maker route -- User must be logged in to view
 router.get('/quizMaker', (req, res) => {
     try {
         if (req.session.logged_in) {
@@ -30,6 +67,7 @@ router.get('/quizMaker', (req, res) => {
     }
 });
 
+// High Scores route -- User must be logged in to view
 router.get('/highscore', (req, res) => {
     try {
         if (req.session.logged_in) {
