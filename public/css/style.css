@@ -39,3 +39,9 @@ header,
     width: 6rem;
     height: 6rem;
 }
+
+#loginBtn {
+    display: flex;
+    position: relative;
+    left: 53rem;
+}
