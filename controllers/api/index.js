@@ -1,4 +1,9 @@
 const router = require('express').Router();
+const userRoutes = require('./userRoutes');
+const projectRoutes = require('./projectRoutes');
+
+router.use('/users', userRoutes);
+router.use('/projects', projectRoutes);
 // const celebertiesRoutes = require('./celebertiesRoutes');
 // const historyRoutes = require('./historyRoutes');
 // const moviesRoutes = require('./moviesRoutes');
