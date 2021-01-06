@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const celebertiesRoutes = require('./celebertiesRoutes');
-const historyRoutes = require('./historyRoutes');
-const moviesRoutes = require('./moviesRoutes');
-const musicRoutes = require('./musicRoutes');
-const sportsRoutes = require('./sportsRoutes');
-const televisionRoutes = require('./televisionRoutes');
+// const celebertiesRoutes = require('./celebertiesRoutes');
+// const historyRoutes = require('./historyRoutes');
+// const moviesRoutes = require('./moviesRoutes');
+// const musicRoutes = require('./musicRoutes');
+// const sportsRoutes = require('./sportsRoutes');
+// const televisionRoutes = require('./televisionRoutes');
 
 // router.use('/celeberties', celebertiesRoutes);
 // router.use('/history', historyRoutes);
