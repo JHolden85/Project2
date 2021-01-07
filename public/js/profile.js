@@ -1,16 +1,32 @@
 const newFormHandler = async(event) => {
     event.preventDefault();
 
-    const name = document.querySelector('#project-name').value.trim();
-    const needed_funding = document
-        .querySelector('#project-funding')
+    // const name = document.querySelector('#custom-name').value.trim();
+    const question = document.querySelector('#custom-question').value.trim();
+    const correct_answer = document
+        .querySelector('#custom-answer')
         .value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
+    const incorrect_answers = document
+        .querySelector('#custom-incAns')
+        .value.trim();
+    const difficulty = document
+        .querySelector('#custom-difficulty')
+        .value.trim();
+    // const waTwo = document.querySelector('#custom-waTwo').value.trim();
+    // const waThree = document.querySelector('#custom-waThree').value.trim();
 
-    if (name && needed_funding && description) {
-        const response = await fetch('/api/projects', {
+    if (difficulty && question && correct_answer && incorrect_answers) {
+        const response = await fetch('/api/customs', {
             method: 'POST',
-            body: JSON.stringify({ name, needed_funding, description }),
+            body: JSON.stringify({
+                // name,
+                difficulty,
+                question,
+                correct_answer,
+                incorrect_answers,
+                // waTwo,
+                // waThree,
+            }),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -28,7 +44,7 @@ const delButtonHandler = async(event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
 
-        const response = await fetch(`/api/projects/${id}`, {
+        const response = await fetch(`/api/customs/${id}`, {
             method: 'DELETE',
         });
 
@@ -41,9 +57,9 @@ const delButtonHandler = async(event) => {
 };
 
 document
-    .querySelector('.new-project-form')
+    .querySelector('.new-custom-form')
     .addEventListener('submit', newFormHandler);
 
 document
-    .querySelector('.project-list')
+    .querySelector('.custom-list')
     .addEventListener('click', delButtonHandler);

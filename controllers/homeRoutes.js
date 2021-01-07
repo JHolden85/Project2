@@ -1,11 +1,50 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, CustomTrivia } = require('../models');
 const withAuth = require('../utils/auth');
-
-router.get('/', (req, res) => {
+// This will prevent NON logged in users from viewing the homepage
+router.get('/', async(req, res) => {
     try {
-        res.render('homepage');
+        // Get all custom trivia questions to JOIN with user data
+        const customData = await CustomTrivia.findAll({
+            include: [{
+                model: User,
+                attributes: ['name'],
+            }, ],
+        });
+        // Serialize data so the handlebars template can read it
+        //((custom)) => custom names can be whatever
+        const customs = customData.map((custom) =>
+            custom.get({
+                plain: true,
+            })
+        );
+        //Pass serialized data and session flag into handlebars template
+        res.render('homepage', {
+            customs,
+            //Pass the logged in flag to the handlebars template
+            logged_in: req.session.logged_in,
+        });
     } catch (err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/custom/:id', async(req, res) => {
+    try {
+        const customData = await CustomTrivia.findByPk(req.params.id, {
+            include: [{
+                model: User,
+                attributes: ['name'],
+            }, ],
+        });
+
+        const custom = customData.get({ plain: true });
+
+        res.render('custom', {
+            ...custom,
+            logged_in: req.session.logged_in,
+        });
+    } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -98,7 +137,7 @@ router.get('/profile', withAuth, async(req, res) => {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            //include: [{ model: Project }],
+            include: [{ model: CustomTrivia }],
         });
 
         const user = userData.get({ plain: true });

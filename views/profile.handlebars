@@ -7,42 +7,77 @@
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Trivia Question:</h3>
-
-    <form class="form new-project-form">
+        <!-- User Input Box -->
+    <form class="form new-custom-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="custom-name">Custom Trivia Name:</label>
+        <input class="form-input" type="text" id="custom-name" name="custom-name" />
       </div>
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label for="custom-incAns">Enter Difficulty:</label>
+        <textarea class="form-input" id="custom-difficulty" name="custom-difficulty"></textarea>
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="custom-question">Question:</label>
+        <textarea class="form-input" id="custom-question" name="custom-question"></textarea>
       </div>
+      <div class="form-group">
+        <label for="custom-answer">Correct Answer:</label>
+        <textarea class="form-input" id="custom-answer" name="custom-answer"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="custom-incAns">Wrong Answer One:</label>
+        <textarea class="form-input" id="custom-incAns" name="custom-incAns"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="custom-incAns">Wrong Answer Two:</label>
+        <textarea class="form-input" id="custom-incAns" name="custom-incAns"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="custom-incAns">Wrong Answer Three:</label>
+        <textarea class="form-input" id="custom-incAns" name="custom-incAns"></textarea>
+      </div>
+      
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if customs.length}}
+  <div class="col-md-6 custom-list">
+    <h3>Current Custom Trivia Questions:</h3>
 
-    {{#each projects as |project|}}
+    {{#each customs as |custom|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/project/{{custom.id}}">{{custom.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{custom.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
   </div>
   {{/if}}
+
+  <!-- Loop over each object in the customs array -->
+{{#each customs as |custom| }}
+<div class="row mb-4 custom">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      <a href="/custom/{{custom.id}}">{{custom.name}}</a>
+    </h2>
+    <p>Created by {{custom.user.name}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{custom.question}}
+    </p>
+  </div>
+</div>
+{{/each}}
 </div>
 
 <script src="./js/profile.js"></script>

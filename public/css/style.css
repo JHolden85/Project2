@@ -1,5 +1,5 @@
 header,
-.project:not(:last-child) {
+.custom:not(:last-child) {
     border-bottom: 1px solid #ccc;
 }
 
@@ -30,10 +30,12 @@ header,
     padding: 2rem;
     border-radius: 25px;
 }
+
 .btn-primary {
     margin: 0.5rem;
     width: auto;
 }
+
 .category {
     display: block;
     width: 6rem;
