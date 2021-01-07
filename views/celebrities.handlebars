@@ -1,13 +1,18 @@
 <main class="container container-fluid mt-5">
+    <div>
+        <p id="score"></p>
+    </div>
     <!-- Render the sub layout -->
     <div>
         <form id="quizContainer" class="row">
             <div class="d-grid gap-2 col-12">
                 <h1 id="question"> Test Question </h1>
-                <button class="btn btn-primary col-12 radio" id="answer1" type="radio"></button><br>
-                <button class="btn btn-primary col-12 radio" id="answer2" type="radio"></button><br>
-                <button class="btn btn-primary col-12 radio" id="answer3" type="radio"></button><br>
-                <button class="btn btn-primary col-12 radio" id="answer4" type="radio"></button>
+                {{!-- <input type="input" name="radio" class="btn btn-primary col-12 radio" id="answer1"></input><br>
+                <input type="input" name="radio" class="btn btn-primary col-12 radio" id="answer2"></input><br> --}}
+                <button class="btn btn-primary col-12 radio" id="answer1"></button><br>
+                <button class="btn btn-primary col-12 radio" id="answer2"></button><br>
+                <button class="btn btn-primary col-12 radio" id="answer3"></button><br>
+                <button class="btn btn-primary col-12 radio" id="answer4"></button>
             </div>
             <button class="btn btn-primary col-3" id="submit" type="submit">submit</button>
         </form>

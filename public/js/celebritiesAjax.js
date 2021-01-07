@@ -3,7 +3,11 @@ const answer1 = document.getElementById('answer1');
 const answer2 = document.getElementById('answer2');
 const answer3 = document.getElementById('answer3');
 const answer4 = document.getElementById('answer4');
-// const submit = document.getElementsByClassName('btn');
+const button = $('.btn');
+const scoreElem = document.getElementById('score');
+const score = 0;
+
+scoreElem.innerHTML = localStorage.getItem('score');
 
 var celebertiesURL = 'https://opentdb.com/api.php?amount=1&category=26';
 
@@ -22,8 +26,7 @@ $.ajax({
 
             console.log(questionArray);
 
-            question.innerHTML =
-                questionArray[Math.floor(Math.random() * questionArray.length)];
+            question.innerHTML = res.results[i].question;
             answer1.innerHTML =
                 questionArray[Math.floor(Math.random() * questionArray.length)];
             questionArray = questionArray.filter(
@@ -46,10 +49,20 @@ $.ajax({
                 questionArray[Math.floor(Math.random() * questionArray.length)];
         }
     }
+
+    const correctAnswer = res.results[0].correct_answer;
+    console.log('Correct Answer: ' + correctAnswer);
+
+    selectedAnswer = button.click((e) => {
+        e.preventDefault();
+        console.log('Selected Answer: ' + e.target.text());
+    });
+
+    if (button.text() === correctAnswer) {
+        return score + 1;
+    }
 });
 
-// submit.onclick(()=>{
-//     console.log('hello');
-// })
+console.log('score: ' + score);
 
-// btn.onclick(c)
+localStorage.setItem('score', score);
