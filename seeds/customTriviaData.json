@@ -1,0 +1,43 @@
+[{
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which one of our friends fell into the disgusting pool at Tom's house at Becky's birthday party?",
+        "correct_answer": "Chad",
+        "incorrect_answers": [
+            "Kyle",
+            "Karen",
+            "Susan"
+        ]
+    },
+    {
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "Mom is the worst cook in the our family",
+        "correct_answer": "True",
+        "incorrect_answers": [
+            "False"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "What year did we rescue bubbles the alcoholic frog?",
+        "correct_answer": "2020",
+        "incorrect_answers": [
+            "2019",
+            "2018",
+            "2017"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "How many girls did Kyle call his girlfriend to bring home from the bar on his 21'st birthday?",
+        "correct_answer": "20",
+        "incorrect_answers": [
+            "2",
+            "1",
+            "6"
+        ]
+    }
+]

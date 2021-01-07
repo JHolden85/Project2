@@ -10,10 +10,6 @@ CustomTrivia.init({
         primaryKey: true,
         autoIncrement: true,
     },
-    category: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
     type: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -43,7 +39,7 @@ CustomTrivia.init({
 }, {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
+    freezeTableName: false,
     underscored: true,
     modelName: 'CustomTrivia',
 });
