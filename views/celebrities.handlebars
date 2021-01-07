@@ -3,12 +3,12 @@
         <p id="score"></p>
     </div>
     <!-- Render the sub layout -->
-    <div>
+    <!-- <div>
         <form id="quizContainer" class="row">
             <div class="d-grid gap-2 col-12">
                 <h1 id="question"> Test Question </h1>
-                {{!-- <input type="input" name="radio" class="btn btn-primary col-12 radio" id="answer1"></input><br>
-                <input type="input" name="radio" class="btn btn-primary col-12 radio" id="answer2"></input><br> --}}
+                <input type="input" name="radio" class="btn btn-primary col-12 radio" id="answer1"></input><br>
+                <input type="input" name="radio" class="btn btn-primary col-12 radio" id="answer2"></input><br>
                 <button class="btn btn-primary col-12 radio" id="answer1"></button><br>
                 <button class="btn btn-primary col-12 radio" id="answer2"></button><br>
                 <button class="btn btn-primary col-12 radio" id="answer3"></button><br>
@@ -16,7 +16,32 @@
             </div>
             <button class="btn btn-primary col-3" id="submit" type="submit">submit</button>
         </form>
-    </div>
+    </div> -->
+
+    <form id="quizContainer" class="row">
+        <div class="d-grid gap-2 col-12">
+            <h1 id="question"> Test Question </h1>
+            <ul>
+                <li class="btn btn-primary col-12">
+                    <input type="radio" name="answer" value="a">
+                    <label for="answer" id="answer1"> </label>
+                </li>
+                <li class="btn btn-primary col-12">
+                    <input type="radio" name="answer" value="b">
+                    <label for="answer" id="answer2"> </label>
+                </li>
+                <li class="btn btn-primary col-12">
+                    <input type="radio" name="answer" value="c">
+                    <label for="answer" id="answer3"> </label>
+                </li>
+                <li class="btn btn-primary col-12">
+                    <input type="radio" name="answer" value="d">
+                    <label for="answer" id="answer4"> </label>
+                </li>
+            </ul>
+        </div>
+    </form>
+    <button class="btn btn-primary col-3" id="submit" type="submit">submit</button>
 </main>
 
 <script src="./js/celebritiesAjax.js"></script>

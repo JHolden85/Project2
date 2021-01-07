@@ -47,3 +47,12 @@ header,
     position: relative;
     left: 53rem;
 }
+
+label {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+input:checked + label {
+    background: green;
+    border-radius: 25px;
+}
