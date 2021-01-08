@@ -7,6 +7,7 @@ router.post('/', withAuth, async(req, res) => {
     try {
         const newCustomTrivia = await CustomTrivia.create({
             ...req.body,
+            incorrect_answers: JSON.stringify([req.body.waOne, req.body.waTwo, req.body.waThree]),
             user_id: req.session.user_id,
         });
 

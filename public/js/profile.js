@@ -6,16 +6,16 @@ const newFormHandler = async(event) => {
     const correct_answer = document
         .querySelector('#custom-answer')
         .value.trim();
-    const incorrect_answers = document
-        .querySelector('#custom-incAns')
+    const waOne = document
+        .querySelector('#custom-waOne')
         .value.trim();
     const difficulty = document
         .querySelector('#custom-difficulty')
         .value.trim();
-    // const waTwo = document.querySelector('#custom-waTwo').value.trim();
-    // const waThree = document.querySelector('#custom-waThree').value.trim();
+    const waTwo = document.querySelector('#custom-waTwo').value.trim();
+    const waThree = document.querySelector('#custom-waThree').value.trim();
 
-    if (difficulty && question && correct_answer && incorrect_answers) {
+    if (difficulty && question && correct_answer && waOne && waTwo && waThree) {
         const response = await fetch('/api/customs', {
             method: 'POST',
             body: JSON.stringify({
@@ -23,9 +23,9 @@ const newFormHandler = async(event) => {
                 difficulty,
                 question,
                 correct_answer,
-                incorrect_answers,
-                // waTwo,
-                // waThree,
+                waOne,
+                waTwo,
+                waThree,
             }),
             headers: {
                 'Content-Type': 'application/json',
