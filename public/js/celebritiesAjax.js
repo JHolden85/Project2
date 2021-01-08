@@ -1,29 +1,34 @@
+// HTML Elements
 const question = document.getElementById('question');
 const answer1 = document.getElementById('answer1');
 const answer2 = document.getElementById('answer2');
 const answer3 = document.getElementById('answer3');
 const answer4 = document.getElementById('answer4');
-// const button = $('.btn');
-const scoreElem = document.getElementById('score');
-// const score = 0;
-const selected = $('input[type="radio"]:checked').val();
-const count = 0;
 
+var selected = null;
+
+// Defining Score element and counter
+var score = 0;
+const scoreElem = document.getElementById('score');
 scoreElem.innerHTML = localStorage.getItem('score');
 
+// Var index acts as the index of the array received from the AJAX request
+var index = 0;
+
+// AJAX Call URL
 var celebertiesURL = 'https://opentdb.com/api.php?amount=10&category=26';
 
-function nextQuestion(res, count) {
-    if (res.results[0].type === 'multiple') {
+function populateQuiz(res, index) {
+    if (res.results[index].type === 'multiple') {
         var questionArray = [];
-        questionArray.push(res.results[count].correct_answer);
-        questionArray.push(res.results[count].incorrect_answers[0]);
-        questionArray.push(res.results[count].incorrect_answers[1]);
-        questionArray.push(res.results[count].incorrect_answers[2]);
+        questionArray.push(res.results[index].correct_answer);
+        questionArray.push(res.results[index].incorrect_answers[0]);
+        questionArray.push(res.results[index].incorrect_answers[1]);
+        questionArray.push(res.results[index].incorrect_answers[2]);
 
         // console.log(questionArray);
 
-        question.innerHTML = res.results[count].question;
+        question.innerHTML = res.results[index].question;
         answer1.innerHTML =
             questionArray[Math.floor(Math.random() * questionArray.length)];
         questionArray = questionArray.filter((e) => e !== answer1.innerText);
@@ -38,80 +43,32 @@ function nextQuestion(res, count) {
         // console.log(questionArray);
         answer4.innerHTML =
             questionArray[Math.floor(Math.random() * questionArray.length)];
+    } else if (res.results[index].type === 'boolean') {
+        return;
     }
 }
 
-// $.ajax({
-//     url: celebertiesURL,
-//     method: 'GET',
-// }).then((res) => {
-//     console.log(res);
-//     if (res.results[0].type === 'multiple') {
-//         for (i = 0; i < res.results.length; i++) {
-//             var questionArray = [];
-//             questionArray.push(res.results[i].correct_answer);
-//             questionArray.push(res.results[i].incorrect_answers[0]);
-//             questionArray.push(res.results[i].incorrect_answers[1]);
-//             questionArray.push(res.results[i].incorrect_answers[2]);
+$.ajax({
+    url: celebertiesURL,
+    method: 'GET',
+}).then((res) => {
+    console.log(res);
 
-//             console.log(questionArray);
+    populateQuiz(res, index);
 
-//             question.innerHTML = res.results[i].question;
-//             answer1.innerHTML =
-//                 questionArray[Math.floor(Math.random() * questionArray.length)];
-//             questionArray = questionArray.filter(
-//                 (e) => e !== answer1.innerText
-//             );
-//             console.log(questionArray);
-//             answer2.innerHTML =
-//                 questionArray[Math.floor(Math.random() * questionArray.length)];
-//             questionArray = questionArray.filter(
-//                 (e) => e !== answer2.innerText
-//             );
-//             console.log(questionArray);
-//             answer3.innerHTML =
-//                 questionArray[Math.floor(Math.random() * questionArray.length)];
-//             questionArray = questionArray.filter(
-//                 (e) => e !== answer3.innerText
-//             );
-//             console.log(questionArray);
-//             answer4.innerHTML =
-//                 questionArray[Math.floor(Math.random() * questionArray.length)];
-//         }
-//     }
-
-//     const correctAnswer = res.results[0].correct_answer;
-//     console.log('Correct Answer: ' + correctAnswer);
-
-//     selectedAnswer = button.click((e) => {
-//         e.preventDefault();
-//         console.log('Selected Answer: ' + e.target.text());
-//     });
-
-//     if (button.text() === correctAnswer) {
-//         return score + 1;
-//     }
-// });
-
-// console.log('score: ' + score);
-
-// localStorage.setItem('score', score);
-
-function call() {
-    $.ajax({
-        url: celebertiesURL,
-        method: 'GET',
-    }).then((res) => {
-        console.log(res);
-        nextQuestion(res, count);
-        console.log(selected);
+    $('#submit').click(() => {
+        index++;
+        populateQuiz(res, index);
     });
-}
 
-call();
-
-$('#submit').click((res) => {
-    call();
-    count + 1;
-    nextQuestion(res, count);
+    $('input').click(() => {
+        const radio = $('input[type="radio"]:checked'.siblings('label').val());
+        var selected = radio.val();
+        console.log(selected);
+        return selected;
+    });
+    console.log(selected);
+    if (selected === res.results[index].correct_answer) {
+        return score++;
+    }
 });
