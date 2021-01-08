@@ -29,12 +29,12 @@ const seedDatabase = async() => {
             individualHooks: true,
             returning: true,
         });
-        // for (const customTrivia of customModifiedData) {
-        //     await CustomTrivia.create({
-        //         ...customTrivia,
-        //         user_id: users[Math.floor(Math.random() * users.length)].id,
-        //     });
-        // }
+        for (const customTrivia of customModifiedData) {
+            await CustomTrivia.create({
+                ...customTrivia,
+                user_id: users[Math.floor(Math.random() * users.length)].id,
+            });
+        }
     } catch (err) {
         console.log(err);
     }
