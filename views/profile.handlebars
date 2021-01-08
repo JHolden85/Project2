@@ -4,8 +4,8 @@
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
+<div class="row mt-4" style="margin:auto">
+  <div class="col-5">
     <h3>Create a New Trivia Question:</h3>
         <!-- User Input Box -->
     <form class="form new-custom-form">
@@ -27,15 +27,15 @@
       </div>
       <div class="form-group">
         <label for="custom-incAns">Wrong Answer One:</label>
-        <textarea class="form-input" id="custom-incAns" name="custom-incAns"></textarea>
+        <textarea class="form-input" id="custom-waOne" name="custom-incAns"></textarea>
       </div>
       <div class="form-group">
         <label for="custom-incAns">Wrong Answer Two:</label>
-        <textarea class="form-input" id="custom-incAns" name="custom-incAns"></textarea>
+        <textarea class="form-input" id="custom-waTwo" name="custom-incAns"></textarea>
       </div>
       <div class="form-group">
         <label for="custom-incAns">Wrong Answer Three:</label>
-        <textarea class="form-input" id="custom-incAns" name="custom-incAns"></textarea>
+        <textarea class="form-input" id="custom-waThree" name="custom-incAns"></textarea>
       </div>
       
       <div class="form-group">
@@ -43,33 +43,15 @@
       </div>
     </form>
   </div>
-<div id="custom-list-parent">
-  {{#if customs.length}}
-  <div class="col-md-6 custom-list">
-    <h3>Current Custom Trivia Questions:</h3>
-
-    {{#each customs as |custom|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{custom.id}}">{{custom.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{custom.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>  
-  <!-- Loop over each object in the customs array -->
-{{#each customs as |custom| }}
+  <div class="col-2"></div>
+  <div class="col-5" id="custom-list-parent">
+  {{#each CustomTrivia as |custom| }}
 <div class="row mb-4 custom">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      <a href="/custom/{{custom.id}}">{{custom.name}}</a>
+      <a href="/custom/{{custom.id}}">question #{{custom.id}}</a>
     </h2>
-    <p>Created by {{custom.user.name}}</p>
   </div>
   <div class="col-md-7">
     <p>
@@ -78,6 +60,7 @@
   </div>
 </div>
 {{/each}}
+  </div>  
 </div>
 
 <script src="./js/profile.js"></script>
