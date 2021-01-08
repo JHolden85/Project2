@@ -2,14 +2,16 @@ const router = require('express').Router();
 const { User, CustomTrivia } = require('../models');
 const withAuth = require('../utils/auth');
 // This will prevent NON logged in users from viewing the homepage
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
     try {
         // Get all custom trivia questions to JOIN with user data
         const customData = await CustomTrivia.findAll({
-            include: [{
-                model: User,
-                attributes: ['name'],
-            }, ],
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
         });
         // Serialize data so the handlebars template can read it
         //((custom)) => custom names can be whatever
@@ -28,13 +30,15 @@ router.get('/', async(req, res) => {
         res.status(500).json(err);
     }
 });
-router.get('/custom/:id', async(req, res) => {
+router.get('/custom/:id', async (req, res) => {
     try {
         const customData = await CustomTrivia.findByPk(req.params.id, {
-            include: [{
-                model: User,
-                attributes: ['name'],
-            }, ],
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
         });
 
         const custom = customData.get({ plain: true });
@@ -132,7 +136,7 @@ router.get('/login', (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async(req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
@@ -146,6 +150,15 @@ router.get('/profile', withAuth, async(req, res) => {
             ...user,
             logged_in: true,
         });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+router.get('/end', async (req, res) => {
+    try {
+        res.render('end');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
