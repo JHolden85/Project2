@@ -1,17 +1,32 @@
 <main class="container container-fluid mt-5">
-    <!-- Render the sub layout -->
     <div>
-        <form id="quizContainer" class="row">
-            <div class="d-grid gap-2 col-12">
-                <h1 id="question"> Test Question </h1>
-                <button class="btn btn-primary col-12 radio" id="answer1" type="radio"></button><br>
-                <button class="btn btn-primary col-12 radio" id="answer2" type="radio"></button><br>
-                <button class="btn btn-primary col-12 radio" id="answer3" type="radio"></button><br>
-                <button class="btn btn-primary col-12 radio" id="answer4" type="radio"></button>
-            </div>
-            <button class="btn btn-primary col-3" id="submit" type="submit">submit</button>
-        </form>
+        <p id="score"></p>
     </div>
+
+    <form id="quizContainer" class="row">
+        <div class="d-grid gap-2 col-12">
+            <h1 id="question"> Test Question </h1>
+            <ul>
+                <li class="btn btn-primary col-12">
+                    <input type="radio" name="answer">
+                    <label for="answer" id="answer1"> </label>
+                </li>
+                <li class="btn btn-primary col-12">
+                    <input type="radio" name="answer">
+                    <label for="answer" id="answer2"> </label>
+                </li>
+                <li class="btn btn-primary col-12">
+                    <input type="radio" name="answer">
+                    <label for="answer" id="answer3"> </label>
+                </li>
+                <li class="btn btn-primary col-12">
+                    <input type="radio" name="answer">
+                    <label for="answer" id="answer4"> </label>
+                </li>
+            </ul>
+        </div>
+    </form>
+    <button class="btn btn-primary col-3" id="submit" type="submit">submit</button>
 </main>
 
 <script src="./js/celebritiesAjax.js"></script>
