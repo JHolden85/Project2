@@ -61,5 +61,5 @@ document
     .addEventListener('submit', newFormHandler);
 
 document
-    .querySelector('.custom-list')
+    .querySelector('#custom-list-parent')
     .addEventListener('click', delButtonHandler);
