@@ -1,22 +1,22 @@
-// HTML Elements
 const question = document.getElementById('question');
 const answer1 = document.getElementById('answer1');
 const answer2 = document.getElementById('answer2');
 const answer3 = document.getElementById('answer3');
 const answer4 = document.getElementById('answer4');
 
+// AJAX Call URL
+var url = 'https://opentdb.com/api.php?amount=10&category=26';
+
+// Placeholder for selected answer
 var selected = null;
 
 // Defining Score element and counter
 var score = 0;
 const scoreElem = document.getElementById('score');
-scoreElem.innerHTML = localStorage.getItem('score');
+scoreElem.innerHTML = 'Your score: ' + score;
 
 // Var index acts as the index of the array received from the AJAX request
 var index = 0;
-
-// AJAX Call URL
-var celebertiesURL = 'https://opentdb.com/api.php?amount=10&category=26';
 
 function populateQuiz(res, index) {
     if (res.results[index].type === 'multiple') {
@@ -49,7 +49,7 @@ function populateQuiz(res, index) {
 }
 
 $.ajax({
-    url: celebertiesURL,
+    url: url,
     method: 'GET',
 }).then((res) => {
     console.log(res);

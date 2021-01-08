@@ -56,3 +56,6 @@ input:checked + label {
     background: green;
     border-radius: 25px;
 }
+#quizContainer {
+    background-color: lightgray;
+}
