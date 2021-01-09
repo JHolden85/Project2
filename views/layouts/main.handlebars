@@ -26,13 +26,10 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/quizMaker">Quiz Maker</a>
-              </li>
-              <li class="nav-item">
+              {{!-- <li class="nav-item">
                 <a class="nav-link" href="/highscore">High Scores</a>
-              </li>
-              <!--test--> {{#if logged_in}}
+              </li> --}}
+              {{#if logged_in}}
               <li class="nav-item">
                 <a class="nav-link" href="/profile">Profile</a>
               </li>
@@ -44,7 +41,6 @@
                 <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"> Log In</i></a>
               </li>
               {{/if}}
-              <!--/test-->
           </div>
           </li>
           </ul>
