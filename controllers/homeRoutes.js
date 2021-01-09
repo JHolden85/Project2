@@ -196,12 +196,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get('/end', async (req, res) => {
     try {
-        if (req.session.logged_in) {
-            res.render('end');
-            return;
-        } else {
-            res.redirect('end');
-        }
+        res.render('end');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
