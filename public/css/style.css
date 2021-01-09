@@ -59,11 +59,3 @@ input:checked + label {
 #quizContainer {
     background-color: lightgray;
 }
-#scoreTitle {
-    font-size: xx-large;
-}
-#scoreElement {
-    margin: 0rem 5rem;
-    font-size: 500%;
-    font-weight: bolder;
-}
