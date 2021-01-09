@@ -59,6 +59,9 @@ function validateAnswer(res, index, selected) {
     if (selected === correct) {
         score++;
         scoreElem.innerHTML = 'Your score: ' + score;
+        localStorage.setItem('score', score);
+        sessionStorage.setItem('score', score);
+        $('#localScore').innerHTML = localStorage.getItem('score');
     }
 }
 
@@ -66,6 +69,7 @@ $.ajax({
     url: url,
     method: 'GET',
 }).then((res) => {
+    localStorage.setItem('score', 0);
     console.log(res);
 
     populateQuiz(res, index);
@@ -84,5 +88,6 @@ $.ajax({
             populateQuiz(res, index);
         }
         radio.checked = false;
+        console.log(score);
     });
 });
