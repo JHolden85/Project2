@@ -4,8 +4,32 @@ const answer2 = document.getElementById('answer2');
 const answer3 = document.getElementById('answer3');
 const answer4 = document.getElementById('answer4');
 
+var currentCategory = window.location.href;
+
+switch (true) {
+    case currentCategory.indexOf('history')!== -1:
+        currentCategory = '23';
+        break;
+    case currentCategory.indexOf('movies')!== -1:
+        currentCategory = '11';
+            break;
+    case currentCategory.indexOf('music')!== -1:
+        currentCategory = '12';
+            break;
+    case currentCategory.indexOf('television')!== -1:
+        currentCategory = '14';
+            break;
+    case currentCategory.indexOf('sports')!== -1:
+        currentCategory = '21';
+            break;
+    case currentCategory.indexOf('celebrities')!== -1:
+        currentCategory = '26';
+            break;
+    default:
+        break;
+}
 // AJAX Call URL
-var url = 'https://opentdb.com/api.php?amount=10&category=26';
+var url = 'https://opentdb.com/api.php?amount=10&category=' + currentCategory;
 
 // Defining Score element and counter
 var score = 0;
