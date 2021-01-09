@@ -159,6 +159,9 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/end', async (req, res) => {
     try {
         res.render('end');
+        if (req.session.logged_in) {
+            return;
+        }
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

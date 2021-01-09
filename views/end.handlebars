@@ -1,0 +1,19 @@
+<main id="scoreContainer">
+    <div id="scoreTitle">
+        Congratulations! Your Score is
+    </div>
+    <div id="scoreElement">
+        {{#if session.logged_in}}
+        {{{user.highScore}}}
+        {{else}}
+        <div id="localScore">
+        </div>
+        {{/if}}
+    </div>
+</main>
+
+<script>
+    var score = localStorage.getItem('score');
+    console.log(score)
+    document.getElementById('localScore').innerHTML = score;
+</script>
