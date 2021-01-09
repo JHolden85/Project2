@@ -7,24 +7,24 @@ const answer4 = document.getElementById('answer4');
 var currentCategory = window.location.href;
 
 switch (true) {
-    case currentCategory.indexOf('history')!== -1:
+    case currentCategory.indexOf('history') !== -1:
         currentCategory = '23';
         break;
-    case currentCategory.indexOf('movies')!== -1:
+    case currentCategory.indexOf('movies') !== -1:
         currentCategory = '11';
-            break;
-    case currentCategory.indexOf('music')!== -1:
+        break;
+    case currentCategory.indexOf('music') !== -1:
         currentCategory = '12';
-            break;
-    case currentCategory.indexOf('television')!== -1:
+        break;
+    case currentCategory.indexOf('television') !== -1:
         currentCategory = '14';
-            break;
-    case currentCategory.indexOf('sports')!== -1:
+        break;
+    case currentCategory.indexOf('sports') !== -1:
         currentCategory = '21';
-            break;
-    case currentCategory.indexOf('celebrities')!== -1:
+        break;
+    case currentCategory.indexOf('celebrities') !== -1:
         currentCategory = '26';
-            break;
+        break;
     default:
         break;
 }
@@ -107,7 +107,6 @@ $.ajax({
 
         if (index > 9) {
             location.replace('/end');
-            console.log('end of quiz');
         } else {
             populateQuiz(res, index);
         }

@@ -1,1 +1,13 @@
-High Scores Here
+<div class="text-center">
+
+    {{#each user as |user|}}
+    <div class="row mb-2">
+        <div class="col-md-8">
+            <h4>{{{user.name}}}</h4>
+        </div>
+        <div class="col-md-4">
+            Score: {{user.score}}
+        </div>
+    </div>
+    {{/each}}
+</div>

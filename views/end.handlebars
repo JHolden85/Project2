@@ -1,15 +1,17 @@
-<main id="scoreContainer">
+<main class="container container-fluid mt-5">
     <div id="scoreTitle">
-        Congratulations! Your Score is
+        Congratulations!
+        Your Score is
     </div>
+    <br>
     <div id="scoreElement">
-        {{#if session.logged_in}}
-        {{{user.highScore}}}
-        {{else}}
-        <div id="localScore">
-        </div>
-        {{/if}}
+        <div id="localScore"><b>
+            </b></div>
     </div>
+    <br>
+    <button type="submit" class="btn btn-primary" id="scoreSubmit">
+        Save your score
+    </button>
 </main>
 
 <script>

@@ -1,14 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// node-localStorage npm packet
-if (typeof localStorage === 'undefined' || localStorage === null) {
-    var LocalStorage = require('node-localstorage').LocalStorage;
-    localStorage = new LocalStorage('./scratch');
-}
-
-const score = localStorage.getItem('score');
-
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
@@ -18,6 +10,21 @@ router.post('/', async (req, res) => {
             req.session.logged_in = true;
 
             res.status(200).json(userData);
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
+});
+
+router.get('/highscore', async (req, res) => {
+    try {
+        const userScores = await User.findAll();
+
+        const scores = userScores.get({ plain: true });
+        res.render('profile', {
+            ...scores,
+            logged_in: true,
         });
     } catch (err) {
         console.log(err);
@@ -68,12 +75,10 @@ router.post('/logout', (req, res) => {
     }
 });
 
-router.post('/end', async (req, res) => {
+router.post('/end', (req, res) => {
     try {
         if (req.session.logged_in) {
-            const user = await User.findByPk(req.session.user_id);
-
-            user.update({ highScore: score });
+            User.update(score);
         } else {
             score;
         }
