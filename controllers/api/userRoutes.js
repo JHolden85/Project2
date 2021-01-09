@@ -71,7 +71,7 @@ router.post('/logout', (req, res) => {
 router.post('/end', async (req, res) => {
     try {
         if (req.session.logged_in) {
-            const user = await User.findByPk(req.session.user_id);
+            const user = await User.update(req.body);
 
             user.update({ highScore: score });
         } else {
