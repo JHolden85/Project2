@@ -56,42 +56,78 @@ router.get('/custom/:id', async (req, res) => {
 // Quiz Category Routes
 router.get('/music', (req, res) => {
     try {
-        res.render('music');
+        if (req.session.logged_in) {
+            res.render('music', {
+                logged_in: true,
+            });
+        } else {
+            res.render('music');
+        }
     } catch (err) {
         res.status(500).json(err);
     }
 });
 router.get('/movies', (req, res) => {
     try {
-        res.render('movies');
+        if (req.session.logged_in) {
+            res.render('movies', {
+                logged_in: true,
+            });
+        } else {
+            res.render('movies');
+        }
     } catch (err) {
         res.status(500).json(err);
     }
 });
 router.get('/television', (req, res) => {
     try {
-        res.render('television');
+        if (req.session.logged_in) {
+            res.render('television', {
+                logged_in: true,
+            });
+        } else {
+            res.render('television');
+        }
     } catch (err) {
         res.status(500).json(err);
     }
 });
 router.get('/sports', (req, res) => {
     try {
-        res.render('sports');
+        if (req.session.logged_in) {
+            res.render('sports', {
+                logged_in: true,
+            });
+        } else {
+            res.render('sports');
+        }
     } catch (err) {
         res.status(500).json(err);
     }
 });
 router.get('/history', (req, res) => {
     try {
-        res.render('history');
+        if (req.session.logged_in) {
+            res.render('history', {
+                logged_in: true,
+            });
+        } else {
+            res.render('history');
+        }
     } catch (err) {
         res.status(500).json(err);
     }
 });
 router.get('/celebrities', (req, res) => {
     try {
-        res.render('celebrities');
+        if (req.session.logged_in) {
+            res.render('celebrities', {
+                logged_in: true,
+            });
+        } else {
+            res.render('celebrities');
+        }
     } catch (err) {
         res.status(500).json(err);
     }
@@ -115,7 +151,9 @@ router.get('/quizMaker', (req, res) => {
 router.get('/highscore', (req, res) => {
     try {
         if (req.session.logged_in) {
-            res.render('highscore');
+            res.render('highscore', {
+                logged_in: true,
+            });
             return;
         } else {
             res.redirect('login');
@@ -158,9 +196,11 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get('/end', async (req, res) => {
     try {
-        res.render('end');
         if (req.session.logged_in) {
+            res.render('end');
             return;
+        } else {
+            res.redirect('end');
         }
     } catch (err) {
         console.log(err);
